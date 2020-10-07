@@ -1,7 +1,7 @@
 const express = require("express"); 
 const { result } = require("underscore");
 const router = express.Router(); 
-const burger = require ("../models.burger.js") 
+const burger = require ("../models/burgers.js") 
 
 router.get("/", function(req, res) {
     burger.all(function(data) {
@@ -11,7 +11,7 @@ router.get("/", function(req, res) {
         burgers: data
     }; 
     console.log(hbsObject); 
-    res.render("index", hbsObject)
+    res.render("index", hbsObject.burgers)
 }); 
 }); 
 

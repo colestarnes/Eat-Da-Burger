@@ -1,8 +1,9 @@
-var orm = require("../config(orm.js"); 
+var orm = require("../config/orm.js"); 
 
 var burger = {
     all: function(cb) {
-        orm.all("cats", function(res) {
+        orm.all("burgers", function(res) { 
+            res.map(burger => { console.log("burger", burger.TextRow)});
             cb(res);
         });
     }, 
